@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<div class="container body-content">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Address :</th>
+            <td th:text="${currentAddress.address1}"></td>
+        </tr>
+        <tr>
+            <th>Address :</th>
+            <td th:text="${currentAddress.address2}"></td>
+        </tr>
+        <tr>
+            <th>City :</th>
+            <td th:text="${currentAddress.city}"></td>
+        </tr>
+        <tr>
+            <th>State :</th>
+            <td th:text="${currentAddress.state}"></td>
+        </tr>
+        <tr>
+            <th>Zip :</th>
+            <td th:text="${currentAddress.zipCode}"></td>
+        </tr>
+    </table>
+
+</div>
+
+<nav th:replace="fragments :: nav2"></nav>
+
+</body>
+</html>
+
