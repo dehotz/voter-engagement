@@ -1,7 +1,5 @@
-#Voter Engagement Web-App
+# Voter Engagement Web-App
 
-###Overview
+### Overview
 
-<ul>
-<li>App to assist with voter engagement by providing information about elections, candidates, and news articles related to a user's area.</li>
-</ul>
+* App to assist with voter engagement by providing information about elections, candidates, and news articles related to a user's area.
