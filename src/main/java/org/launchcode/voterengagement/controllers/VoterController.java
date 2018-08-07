@@ -15,7 +15,7 @@ public class VoterController {
     @RequestMapping(value = "")
     public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
 
-        model.addAttribute("title", "Voter Engagement Web-App");
+        model.addAttribute("title", "Voter Engagement App");
         //MethodSetCookie(request, response, cookieName, cookieValue);
         //response.addCookie(cookie);
         return "voter/index";

@@ -4,8 +4,15 @@
 <body class="container">
 
 <nav th:replace="fragments :: navigation"></nav>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 th:text="${title}">Default Title</h1>
+    </div>
+</div>
 
-<h1 th:text="${title}">Default Title</h1>
+<div class="well well-sm">
+    <p th:replace="fragments :: cookie"></p>
+</div>
 
 <form method="post" style="max-width:600px;" th:object="${address}">
     <div class="form-group">

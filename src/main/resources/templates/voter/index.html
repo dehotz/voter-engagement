@@ -2,13 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body class="container">
+<body>
+
+<div class="container-fluid">
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<h1 th:text="${title}">Default Title</h1>
+<div class="jumbotron text-center">
+    <img src="https://t4.ftcdn.net/jpg/00/59/71/01/240_F_59710117_fTmkmXV8lkATWP9OKUEqgQcbqJ6QfWgA.jpg" class="img-circle" alt="Vote">
+    <h1 th:text="${title}">Default Title</h1>
+    <p>Web Application to assist with voter engagement by identifying districts and related information for users.</p>
+</div>
 
-<nav th:replace="fragments :: nav2"></nav>
+</div>
+
+<footer class="container-fluid text-center bg-lightgray">
+
+    <div th:replace="fragments :: cookiesbutton"></div>
+
+    <div class="copyrights" style="margin-top:25px;">
+        <p>Dustin Hotz © 2018</p>
+        <p><a href="https://www.linkedin.com/in/dustinhotz63119/" target="_blank">Linkedin <i class="fa fa-linkedin-square" style="font-size:18px;color:black"></i></a></p>
+    </div>
+</footer>
 
 </body>
+
 </html>

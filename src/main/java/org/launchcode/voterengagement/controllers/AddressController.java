@@ -24,8 +24,18 @@ import java.util.Map;
 public class AddressController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String displayEnterAddressForm(Model model) {
+    public String displayEnterAddressForm(Model model, HttpServletRequest request) throws Exception {
 
+        //check for and get cookie
+        String clientAddressCookie = CookieReader.MethodReadCookie(request);
+        //decode cookie
+        String decodedAddressCookie = UrlDecoder.CookieDecoder(clientAddressCookie);
+
+        //test print statements
+        System.out.println(clientAddressCookie);
+        System.out.println(decodedAddressCookie);
+
+        model.addAttribute("addressCookie", decodedAddressCookie);
         model.addAttribute("title", "Address Form");
         model.addAttribute(new Address());
         return "address/entry";
@@ -54,8 +64,6 @@ public class AddressController {
 
         String googleUrl = "https://www.googleapis.com/civicinfo/v2/voterinfo?";
         String apiKey = "AIzaSyDzr5q6VWKBmj9LopsS5dEDUZ7nngRQ2B0";
-
-        //String googleUrlApi = googleUrl + apiKey;
 
         Map<String, String> parameters = new HashMap<>();
         parameters.put("address", requestString);
@@ -101,6 +109,9 @@ public class AddressController {
 
         System.out.println(content.toString());
 
+        String electionData = content.toString();
+
+        System.out.println(electionData);
 
         model.addAttribute("title", "Current Address");
         model.addAttribute("currentAddress", address);
