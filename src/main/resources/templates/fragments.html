@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}">Voter Engagement WebApp</title>
+    <title th:text="${title}">Voter Engagement Web-App</title>
 
     <!--
     Commented out bootstrap css / js , possibly re-add or re-do
@@ -19,8 +19,9 @@
 
 <nav th:fragment="navigation">
     <a href="/voter">Home</a> |
-    <a href="/">Categories</a> |
-    <a href="/menu">Menus</a>
+    <a href="/elections">Elections</a> |
+    <a href="/candidates">Candidates</a> |
+    <a href="/news">News</a>
 </nav>
 
 <nav th:fragment="nav2" class="navigation">

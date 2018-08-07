@@ -1,29 +1,15 @@
 package org.launchcode.voterengagement.controllers;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
-@Controller
-@RequestMapping(value = "voter")
-public class VoterController {
+public class CookieBuilder {
 
-    @RequestMapping(value = "")
-    public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
-
-        model.addAttribute("title", "Voter Engagement Web-App");
-        //MethodSetCookie(request, response, cookieName, cookieValue);
-        //response.addCookie(cookie);
-        return "voter/index";
-    }
-
-    void MethodSetCookie(HttpServletRequest request, HttpServletResponse response){
-        final String cookieName = "localdistrict";
-        final String cookieValue = "MO1";
+    static void MethodSetCookie(HttpServletRequest request, HttpServletResponse response, String name, String value){
+        final String cookieName = name;
+        final String cookieValue = value;
         final Boolean useSecureCookie = false;
         final int expiryTime = 60 * 60 * 24;
         final String cookiePath = "/";
@@ -38,5 +24,6 @@ public class VoterController {
 
         response.addCookie(cookie);
     }
+
 
 }
