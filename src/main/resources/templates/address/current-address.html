@@ -2,17 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body>
-
-<h1 th:text="${title}">Default Title</h1>
-
 <nav th:replace="fragments :: navigation"></nav>
 
-<div th:replace="fragments :: cookie"></div>
-
-<p th:text="${inputLine}">Test</p>
+<div class="container body-content">
+    <h1 th:text="${title}">Default Title</h1>
+</div>
 
 <div class="container body-content">
-
     <table class="table table-bordered">
         <tr>
             <th>Address :</th>
@@ -35,10 +31,11 @@
             <td th:text="${currentAddress.zipCode}"></td>
         </tr>
     </table>
-
 </div>
 
-<nav th:replace="fragments :: nav2"></nav>
+<div class="container">
+    <p th:text="${electionData}">text</p>
+</div>
 
 </body>
 </html>

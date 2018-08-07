@@ -43,7 +43,7 @@ public class AddressController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String processEnterAddressForm(@ModelAttribute @Valid Address newAddress, Errors errors, Model model, HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+            throws IOException, Exception {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Address Form");
@@ -113,10 +113,15 @@ public class AddressController {
 
         System.out.println(electionData);
 
+        //check for and get cookie
+        String clientAddressCookie = CookieReader.MethodReadCookie(request);
+        //decode cookie
+        String decodedAddressCookie = UrlDecoder.CookieDecoder(clientAddressCookie);
+
+        model.addAttribute("addressCookie", decodedAddressCookie);
+        model.addAttribute("electionData", electionData);
         model.addAttribute("title", "Current Address");
         model.addAttribute("currentAddress", address);
-        model.addAttribute("inputLine", inputLine);
-        model.addAttribute("requestString", requestString);
         return "address/current-address";
 
     }
